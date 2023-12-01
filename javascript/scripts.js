@@ -22,22 +22,31 @@ note: il prezzo è da indicare con massimo due decimali
 
 */
 
-chilometri = prompt("Quanti chilometri vuoi percorrere?");
-anni = prompt("Quanti anni hai?");
-costo_del_viaggio = (0.21 * chilometri);
+let chilometri = prompt("Quanti chilometri vuoi percorrere?");
+let anni = prompt("Quanti anni hai?");
+let costo_del_viaggio = (0.21 * chilometri);
 
-if (anni < 18) {
-    costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio / 5);
+let n_chilometri = parseInt(chilometri);
+let n_anni = parseInt(anni);
+
+if ((!isNaN(n_chilometri)) && (!isNaN(n_anni))) {
+    if (n_anni < 18) {
+        costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio / 5);
+    }
+    
+    else if (n_anni > 65) {
+        costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio * 2 / 5);
+    }
+
+    costo_del_viaggio_due_decimali = costo_del_viaggio.toFixed(2);
+    simbolo_euro = "€"
+
+    document.getElementById("my-container").innerHTML += costo_del_viaggio_due_decimali + simbolo_euro;
 }
 
-else if (anni > 65) {
-    costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio * 2 / 5);
+else {
+    document.getElementById("my-container").innerHTML = "Devi inserire un numero!";
 }
-
-costo_del_viaggio_due_decimali = costo_del_viaggio.toFixed(2);
-simbolo_euro = "€"
-
-document.getElementById("my-container").innerHTML += costo_del_viaggio_due_decimali + simbolo_euro;
 
 
 
