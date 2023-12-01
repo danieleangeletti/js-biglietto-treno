@@ -35,6 +35,9 @@ else if (anni > 65) {
 }
 
 costo_del_viaggio_due_decimali = costo_del_viaggio.toFixed(2);
+simbolo_euro = "€"
 
-document.writeln(costo_del_viaggio_due_decimali);
+document.getElementById("my-container").innerHTML += costo_del_viaggio_due_decimali + simbolo_euro;
+
+
 
