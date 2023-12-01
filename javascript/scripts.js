@@ -22,3 +22,19 @@ note: il prezzo è da indicare con massimo due decimali
 
 */
 
+chilometri = prompt("Quanti chilometri vuoi percorrere?");
+anni = prompt("Quanti anni hai?");
+costo_del_viaggio = (0.21 * chilometri);
+
+if (anni < 18) {
+    costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio / 5);
+}
+
+else if (anni > 65) {
+    costo_del_viaggio = costo_del_viaggio - (costo_del_viaggio * 2 / 5);
+}
+
+costo_del_viaggio_due_decimali = costo_del_viaggio.toFixed(2);
+
+document.writeln(costo_del_viaggio_due_decimali);
+
